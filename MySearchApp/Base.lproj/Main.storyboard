@@ -69,8 +69,20 @@
                     <view key="view" contentMode="scaleToFill" id="JEf-LV-y2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ufZ-Yc-j8K">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ufZ-Yc-j8K" firstAttribute="centerX" secondItem="JEf-LV-y2u" secondAttribute="centerX" id="MsQ-s4-PCC"/>
+                            <constraint firstItem="ufZ-Yc-j8K" firstAttribute="centerY" secondItem="JEf-LV-y2u" secondAttribute="centerY" id="zWn-FZ-Bai"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ufZ-Yc-j8K" id="2pq-E8-cZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPF-j5-rGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

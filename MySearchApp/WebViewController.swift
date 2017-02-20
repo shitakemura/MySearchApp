@@ -12,21 +12,34 @@ import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var itemUrl: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        let webView = WKWebView(frame: self.view.frame)
+        webView.navigationDelegate = self
         view.addSubview(webView)
-        
+
         guard let url = itemUrl else { return }
-        
         let urlRequest = URLRequest(url: URL(string: url)!)
         webView.load(urlRequest)
-
+        
+        webView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
+    
 
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -17,7 +17,7 @@ class SearchItemViewController: UIViewController {
     
     var itemDataArray = [ItemData]()
 
-    let appid = "----------"
+    let appid = "-"
     let entryUrl = "https:shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch"
     
     
@@ -153,10 +153,10 @@ extension SearchItemViewController: UISearchBarDelegate {
         
         for key in results.keys.sorted() {
             
+            
             if key == "Request" { continue }
             
             guard let result = results[key] as? [String: Any] else { continue }
-            
             
             var itemImageUrl: String?
             if let itemImageDic = result["Image"] as? [String: Any] {
@@ -173,7 +173,7 @@ extension SearchItemViewController: UISearchBarDelegate {
             let itemUrl = result["Url"] as? String
             
             let itemData = ItemData(itemImageUrl: itemImageUrl, itemTitle: itemTitle, itemPrice: itemPrice, itemUrl: itemUrl)
-            
+
             itemDataArray.append(itemData)
         }
     }
