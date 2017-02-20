@@ -25,6 +25,8 @@ class SearchItemTableViewCell: UITableViewCell {
             itemTitleLabel.text = itemData.itemTitle
             
             let number = NSNumber(integerLiteral: Int(itemData.itemPrice!)!)
+            priceFormat.numberStyle = .currency
+            priceFormat.currencyCode = "JPY"
             itemPriceLabel.text = priceFormat.string(from: number)
             
             itemUrl = itemData.itemUrl

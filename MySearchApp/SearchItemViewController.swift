@@ -17,7 +17,7 @@ class SearchItemViewController: UIViewController {
     
     var itemDataArray = [ItemData]()
 
-    let appid = "-----------------------------------"
+    let appid = "----------"
     let entryUrl = "https:shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch"
     
     
@@ -61,6 +61,8 @@ extension SearchItemViewController: UISearchBarDelegate {
         let parameter = ["appid": appid, "query": inputText]
         let requestUrl = createRequestUrl(parameter: parameter)
         
+        print("requestUrl: \(requestUrl)")
+        
         // Web API Request
         request(requestUrl: requestUrl)
         
@@ -72,7 +74,11 @@ extension SearchItemViewController: UISearchBarDelegate {
         
         for key in parameter.keys {
         
+            print("key: \(key)")
+            
             guard let value = parameter[key] else { continue }
+            
+            print("value: \(value)")
             
             if parameterString.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 parameterString += "&"
