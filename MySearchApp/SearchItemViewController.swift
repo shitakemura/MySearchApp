@@ -12,12 +12,13 @@ class SearchItemViewController: UIViewController {
 
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var button: UIButton!
     
     var itemDataArray = [ItemData]()
 
-    let appid = "-"
+    let appid = ""
     let entryUrl = "https:shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch"
     
     
@@ -25,6 +26,8 @@ class SearchItemViewController: UIViewController {
         super.viewDidLoad()
 
         searchBar.delegate = self
+        
+        activityIndicator.hidesWhenStopped = true
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -51,6 +54,8 @@ class SearchItemViewController: UIViewController {
 extension SearchItemViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        activityIndicator.startAnimating()
         
         guard let inputText = searchBar.text else { return }
         
@@ -119,6 +124,7 @@ extension SearchItemViewController: UISearchBarDelegate {
                 let alert = UIAlertController(title: "エラー", message: error?.localizedDescription, preferredStyle: .alert)
                 
                 DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
                     self.present(alert, animated: true, completion: nil)
                 }
                 
@@ -138,6 +144,7 @@ extension SearchItemViewController: UISearchBarDelegate {
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
         

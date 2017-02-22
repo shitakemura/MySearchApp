@@ -29,6 +29,9 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d5f-Kv-6Dy">
+                                <rect key="frame" x="178" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA8-EG-Q6F">
                                 <rect key="frame" x="164" y="607" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -44,11 +47,14 @@
                             <constraint firstItem="gA8-EG-Q6F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YOl-Ek-c2l"/>
                             <constraint firstAttribute="trailing" secondItem="voa-uh-Vex" secondAttribute="trailing" id="sfu-fH-rWR"/>
                             <constraint firstItem="ngE-x0-Bqg" firstAttribute="top" secondItem="voa-uh-Vex" secondAttribute="bottom" id="tk2-t0-DZP"/>
+                            <constraint firstItem="d5f-Kv-6Dy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uJm-4y-0B5"/>
                             <constraint firstItem="voa-uh-Vex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uQZ-wA-jdj"/>
+                            <constraint firstItem="d5f-Kv-6Dy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wRd-H8-gdd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nst-iU-rzQ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="d5f-Kv-6Dy" id="pcG-AQ-GRk"/>
                         <outlet property="button" destination="gA8-EG-Q6F" id="YEB-dW-Ze6"/>
                         <outlet property="searchBar" destination="voa-uh-Vex" id="viy-xP-f9A"/>
                         <outlet property="tableView" destination="ngE-x0-Bqg" id="PhS-Tk-Dfd"/>
