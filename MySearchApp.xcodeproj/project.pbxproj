@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184FA00D1E5F2BEB0071DDC5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184FA00C1E5F2BEB0071DDC5 /* App.swift */; };
 		18E4A15E1E59745C006D960F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4A15D1E59745C006D960F /* AppDelegate.swift */; };
 		18E4A1601E59745C006D960F /* SearchItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4A15F1E59745C006D960F /* SearchItemViewController.swift */; };
 		18E4A1631E59745C006D960F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E4A1611E59745C006D960F /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184FA00C1E5F2BEB0071DDC5 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		18E4A15A1E59745C006D960F /* MySearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E4A15D1E59745C006D960F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E4A15F1E59745C006D960F /* SearchItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				18E4A15D1E59745C006D960F /* AppDelegate.swift */,
+				184FA00C1E5F2BEB0071DDC5 /* App.swift */,
 				18E4A1611E59745C006D960F /* Main.storyboard */,
 				18E4A15F1E59745C006D960F /* SearchItemViewController.swift */,
 				18E4A1701E597569006D960F /* SearchItemTableViewCell.xib */,
@@ -152,6 +155,7 @@
 				18E4A1601E59745C006D960F /* SearchItemViewController.swift in Sources */,
 				18E4A1711E597569006D960F /* SearchItemTableViewCell.swift in Sources */,
 				18E4A15E1E59745C006D960F /* AppDelegate.swift in Sources */,
+				184FA00D1E5F2BEB0071DDC5 /* App.swift in Sources */,
 				18E4A1741E5977A8006D960F /* WebViewController.swift in Sources */,
 				18E4A1761E5979D7006D960F /* ItemData.swift in Sources */,
 			);

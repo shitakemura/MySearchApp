@@ -17,8 +17,9 @@ class SearchItemViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     
     var itemDataArray = [ItemData]()
+    var didSelect: (ItemData) -> () = { _ in }
 
-    let appid = ""
+    let appid = "-"
     let entryUrl = "https:shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch"
     
     
@@ -191,13 +192,21 @@ extension SearchItemViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // go to nextview
-        let storyboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "WebVC") as! WebViewController
+//        // go to nextview
+//        let storyboard = self.storyboard!
+//        let nextView = storyboard.instantiateViewController(withIdentifier: "WebVC") as! WebViewController
+//        
+//        nextView.itemUrl = itemDataArray[indexPath.row].itemUrl
+//        
+//        navigationController?.pushViewController(nextView, animated: true)
+
+        let itemData = itemDataArray[indexPath.row]
         
-        nextView.itemUrl = itemDataArray[indexPath.row].itemUrl
+        didSelect(itemData)
         
-        navigationController?.pushViewController(nextView, animated: true)
+        
+        
+        
     }
 }
 
